@@ -1,9 +1,9 @@
 import asynchttpserver, asyncdispatch
 
 let server = newAsyncHttpServer()
-server.listen(Port(2005))
+server.listen(Port(80))
 
-echo "Server started on port 2005"
+echo "Server started on port 80"
 
 proc requestCallBack(req: Request) {.async, gcsafe.} =
     let 
