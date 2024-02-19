@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transmuter</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h2>Welcome to the Transmuter</h2>
+        <h4 style="text-decoration-line: underline">
+          One File, Different Formats
+        </h4>
+      </header>
+
+      <div id="arena">
+        <div id="copy">
+          <div class="file">
+            <label for="originalFile" class="fileLabel">Paste/Upload A New Image File</label>
+            <input type="file" name="originalFile" id="originalFile"/>
+          </div>
+
+          <div class="format">
+            <div class="selectedFormat">Current File Format is&nbsp;<span class="mimeType">&lt;Empty File&gt;</span></div>
+          </div>
+        </div>
+
+        <div id="new-box" title="click to add another file format">
+          <img src="/new.svg" alt="add new format" id="new-box-icon" />
+        </div>
+      </div>
+    </main>
+
+    <script src="/jquery.js"></script>
+    <script src="/client.js"></script>
+  </body>
+</html>

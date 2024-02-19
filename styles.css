@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Remove default margin and padding */
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #000;
+  color: green;
+}
+
+main header {
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#arena {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-left: 20px;
+  margin-right: 20px;
+}
+#copy .file,
+.paste .file {
+  background-color: #181818;
+  border: 1px solid green;
+  border-radius: 5px;
+  margin: 20px;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#copy .format,
+.paste .format {
+  background-color: black;
+  border: 1px solid green;
+  border-radius: 5px;
+  margin: 20px;
+  width: 300px;
+  height: 50px;
+}
+
+.selectedFormat {
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.paste .selected-format{
+  cursor: pointer;
+}
+
+.format-list {
+  display: none;
+  width: 300px;
+  position: absolute;
+  background-color: #181818;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.format-list span {
+  color: green;
+  cursor: pointer;
+  border: 1px solid green;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.format-list span:hover {
+  background-color: black;
+}
+
+#new-box {
+  margin: 20px;
+  width: 100px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+  cursor: pointer;
+}
+#new-box-icon {
+  width: 100px;
+  opacity: 0.9;
+}
+
+.paste {
+  position: relative;
+}
+
+.copyIcon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-70px, 35px);
+  cursor: pointer;
+  height: 40px;
+  opacity: 0;
+  display: none;
+  transition: opacity 0.5s ease-in;
+}
+
+.paste .file:hover .copyIcon {
+  display: block;
+  opacity: 0.5;
+}
+
+#originalFile {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.fileLabel{
+  position: absolute;
+  font-size: 14px;
+  width: 300px;
+  height: 300px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filePreview{
+  width: 200px;
+}
+
+/* Media query for screens smaller than 600px */
+@media screen and (max-width: 600px) {
+  #copy .file,
+  .paste .file,
+  #copy .format,
+  .paste .format {
+    margin: 10px; /* Adjust margin for smaller screens */
+  }
+
+  #copy .file,
+  .paste .file {
+    background-color: #181818;
+    border: 1px solid green;
+    border-radius: 2px;
+    margin: 20px;
+    width: 100px;
+    height: 100px;
+  }
+
+  #copy .format,
+  .paste .format {
+    background-color: black;
+    border: 1px solid green;
+    border-radius: 2px;
+    margin: 20px;
+    width: 100px;
+    height: 20px;
+  }
+}
